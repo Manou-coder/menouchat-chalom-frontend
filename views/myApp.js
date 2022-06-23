@@ -14,7 +14,7 @@ function clock() {
   min += 45;
   
   let hor = hours * 30;
-  hor += 60;
+  hor += 50;
 
 
   document.querySelector('.min').style.transform = `rotate(${min}deg)`;
