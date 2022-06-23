@@ -1,3 +1,4 @@
+// MONTRE
 clock();
 
 function clock() {
@@ -9,22 +10,46 @@ function clock() {
   const minute = minutes * 6;
   const second = seconds * 6;
 
-
-  let second2 = seconds * 6;
-
-  second2 += 225;
+  let min = minutes * 6;
+  min += 45;
   
-  
-  document.querySelector('.heure').style.transform = `rotate(${hour}deg)`;
+  let hor = hours * 30;
+  hor += 60;
 
-  document.querySelector('.minute').style.transform = `rotate(${minute}deg)`;
 
-  document.querySelector('.seconde').style.transform = `rotate(${second}deg)`;
+  document.querySelector('.min').style.transform = `rotate(${min}deg)`;
 
-  document.querySelector('.aiguille').style.transform = `rotate(${second2}deg)`;
+  document.querySelector('.hor').style.transform = `rotate(${hor}deg)`;
 }
 
 setInterval(clock, 1000);
+//
+
+// OBJET JSON
+
+const objet = {
+  parashatAshavua: "קורח",
+  adlaka: "19:11",
+  dafAyomi: "יבמות קי'",
+  evenement: "ראש חודש",
+  dateHebreu: "יום ראשון כ' סיון תשפ''ב",
+
+}
+
+const date = new Date().toLocaleDateString();
+
+let afficheDate = document.querySelectorAll('.date');
+
+console.log(afficheDate);
+
+afficheDate.forEach(element => {
+  element.innerHTML = date;
+  element.style.color = 'red';
+  element.style.marginTop = '0px';
+  element.style.marginBottom = '0px';
+});
+
+
 
 
 
@@ -36,6 +61,7 @@ setInterval(clock, 1000);
 //     console.log(data)
 //     console.log("coucou");
 //     document.getElementById("myImg").src = `http://localhost:3000/${data.urlImage}`;
+//     document.getElementById("myImg2").src = `http://localhost:3000/${data.urlImage}`;
 
   
 //   });

@@ -1,110 +1,129 @@
 body
 {
-	background-image: url('pexels-fwstudio-172276.jpg');
+	background-image: url('ebauche\ bet\ hamidrash9.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
 }
 
+/* CHEARIM */
 
+div.zmanei_chabat{
+	position: absolute;
+	border: 3px solid red;
+	width: 250px;
+	height: 260px;
+	top: 350px;
+	left: 80px;
 
-
-.clock {
-	margin-right: auto;
-	margin-left: auto;
-	width: 300px;
-	height: 300PX;
-	border-radius: 50%;
-	box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
-.clockroman
+div.zmanei_ayom{
+	position: absolute;
+	border: 3px solid red;
+	width: 250px;
+	height: 260px;
+	top: 350px;
+	right: 80px;
+}
+
+article.item
 {
-	max-width: 100%;
-	height: 350px;
-	position: absolute;
-	top: -10px;
-	left: 185px;
-}
-
-.wrap {
 	position: relative;
-	height:300px;
+	font-size:large;
+	margin-top: -25px;
+	margin-bottom: -25px;
+	top: 10px
 }
 
-/* .minute, .heure {
-	 position: absolute;
-	 height: 100px; width: 6px;
-	 margin: auto;
-	 top: -27%; left: 0;	bottom: 0; right: 0;
-	 transform-origin: bottom center;
-	 transform: rotate(0deg);
-	 box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
-     background: black;
+
+article.item p 
+{
+    display: inline-block;
 }
 
-.minute {
-	position: absolute;
-	height: 130px;
-	width: 4px;
-	top: -38%;
-	left: 0;
-	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
-	transform: rotate(90deg);
-}
-
-.seconde {
-	position: absolute;
-	height: 90px;
-	width: 2px;
+p.zman {
+	font-weight: bold;
 	margin: auto;
-	top: -26%;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	border-radius: 4px;
-	background: #ff4b3e;
-	transform-origin: bottom center;
-	transform: rotate(180deg);
-} */
+	text-align: right;
+    border: 1px solid red;
+	width: 50%;
+}
 
-.aiguille {
-	max-width: 100%;
+p.horaire 
+{
+    text-align: left;
+    border: 1px solid green;
+	width: 46.55%;
+}
+
+/* PANNEAUX A COTE DE LA MONTRE */
+
+div.panneau_gauche
+{
 	position: absolute;
+	border: 3px solid yellow;
+	width: 250px;
+	height: 315px;
+	top: 715px;
+	left: 28px;
+}
+
+div.panneau_gauche p
+{
+	font-size: large;
+	color: white;
+}
+
+p.date
+{
+	color: red;
+}
+
+div.panneau_droit
+{
+	position: absolute;
+	border: 3px solid yellow;
+	width: 250px;
+	height: 315px;
+	top: 715px;
+	right: 28px;
+}
+
+/* MONTRE */
+
+
+.min {
+	position: absolute;
+	height:160px;
+	max-width: 100%;
+	top: 795px;
+	left: 350px;
+	transform: rotate(135deg);
 }
 
 .hor
 {
-	height: 30%;
-	top: 79px;
-	left: 77px;
-}
-
-
-.min
-{
-	height: 50%;
-	top: 17px;
-	left: 140px;
-}
-
-
-
-.dot {
 	position: absolute;
-	top: 15px;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	width: 12px;
-	height: 12px;
-	border-radius: 50%;
-	background: white;
-	border: 2px solid #1b1b1b;
-	border-radius: 50%;
-	margin: auto;
+	height:105px;
+	max-width: 100%;
+	top: 823px;
+	left: 375px;
+	transform: rotate(45deg);
 }
 
-#myImg
+.boutton
 {
 	position: absolute;
-	max-width: 50%;
-	right: 300px;
+	height:15px;
+	max-width: 100%;
+	top: 870px;
+	left: 420px;	
 }
+
+/* top 870
+left 420 */
+
+/* top -210
+left -107 */
