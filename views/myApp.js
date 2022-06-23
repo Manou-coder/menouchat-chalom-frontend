@@ -14,7 +14,7 @@ function clock() {
   min += 45;
   
   let hor = hours * 30;
-  hor += 50;
+  hor += 60;
 
 
   document.querySelector('.min').style.transform = `rotate(${min}deg)`;
@@ -38,17 +38,55 @@ const objet = {
 
 const date = new Date().toLocaleDateString();
 
-let afficheDate = document.querySelectorAll('.date');
+let afficheDate = document.querySelector('.date');
 
 console.log(afficheDate);
 
-afficheDate.forEach(element => {
-  element.innerHTML = date;
+// afficheDate.forEach(element => {
+//   element.innerHTML = date;
+//   element.style.color = 'red';
+//   element.style.marginTop = '0px';
+//   element.style.marginBottom = '0px';
+// });
+
+let affiche_parasha = document.querySelector('.parasha');
+let affiche_adlaka = document.querySelector('.adlaka');
+let affiche_daf = document.querySelector('.daf');
+let affiche_evenement = document.querySelector('.evenement');
+
+
+affiche_parasha.innerHTML = objet.parashatAshavua;
+affiche_adlaka.innerHTML = objet.adlaka;
+affiche_daf.innerHTML = objet.dafAyomi;
+affiche_evenement.innerHTML = objet.evenement;
+
+let affiche_panneau_gauche = document.querySelectorAll('div.panneau_gauche p');
+
+affiche_panneau_gauche.forEach(element => {
   element.style.color = 'red';
   element.style.marginTop = '0px';
   element.style.marginBottom = '0px';
 });
 
+// affiche_panneau_gauche.style.color = 'red';
+
+// const array = [affiche_parasha, affiche_adlaka, affiche_daf, affiche_evenement]
+
+// objet.forEach(element => {
+//   console.log(element);
+// });
+
+// for (const key in objet) {
+//   if (Object.hasOwnProperty.call(objet, key)) {
+//     const element = objet[key];
+//     console.log(element);
+//     console.log(key);
+//     array.forEach(e => {
+//       affiche${e}.innerHTML = 
+//     });
+    
+//   }
+// }
 
 
 
