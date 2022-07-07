@@ -80,6 +80,27 @@ const displayZmaneiAyom = (async () => {
 
 displayZmaneiAyom();
 
+// ZMANEI SHABAT minchaShbt
+
+const displayZmaneiShabat= async () => {
+  let ZmaneiShabat= await fetch('http://localhost:3000/api/zmanim/zman-shabat');
+  ZmaneiShabat= await ZmaneiShabat.json();
+  console.log(ZmaneiShabat);
+  let shirAshirim = document.querySelector('#shirAshirim')
+  shirAshirim.innerHTML = ZmaneiShabat.shirAshirim;
+  let minchaErevShbt = document.querySelector('#minchaErevShbt')
+  minchaErevShbt.innerHTML = ZmaneiShabat.minchaErevShbt;
+  let shaharitShbt = document.querySelector('#shaharitShbt')
+  shaharitShbt.innerHTML = ZmaneiShabat.shaharitShbt;
+  let minchaShbt = document.querySelector('#minchaShbt')
+  minchaShbt.innerHTML = ZmaneiShabat.minchaShbt;
+
+};
+
+displayZmaneiShabat();
+
+
+
 
 // INFO DAF PARASHA ET AUTRES
 
@@ -103,98 +124,7 @@ displayInfo();
 
 
 
-
-
-
-
-
-
-
-
-
-
-// const displayInfo = (async () => {
-//   let Info = await fetch('http://localhost:3000/api/zmanim/zman-chol');
-//   Info = await ZmanTefChol.json();
-//   let arvitOfChol = document.querySelector('#arvit')
-//   arvitOfChol.innerHTML = ZmanTefChol.arvitChol;
-//   let shacharitOfChol = document.querySelector('#shacharit')
-//   shacharitOfChol.innerHTML = ZmanTefChol.shacharitChol;
-//   let minchaOfChol = document.querySelector('#mincha')
-//   minchaOfChol.innerHTML = ZmanTefChol.minchaChol;
-
-// });
-
-// displayInfo();
-
-
-
-// OBJET JSON
-
-const objet = {
-  parashatAshavua: "קורח",
-  adlaka: "19:11",
-  dafAyomi: "יבמות קי'",
-  evenement: "ראש חודש",
-  dateHebreu: "יום ראשון כ' סיון תשפ''ב",
-
-}
-
-const date = new Date().toLocaleDateString();
-
-let afficheDate = document.querySelector('.date');
-
-// console.log(afficheDate);
-
-// afficheDate.forEach(element => {
-//   element.innerHTML = date;
-//   element.style.color = 'red';
-//   element.style.marginTop = '0px';
-//   element.style.marginBottom = '0px';
-// });
-
-let affiche_parasha = document.querySelector('.parasha');
-let affiche_adlaka = document.querySelector('.adlaka');
-let affiche_daf = document.querySelector('.daf');
-let affiche_evenement = document.querySelector('.evenement');
-
-
-// affiche_parasha.innerHTML = objet.parashatAshavua;
-// affiche_adlaka.innerHTML = objet.adlaka;
-// affiche_daf.innerHTML = objet.dafAyomi;
-// affiche_evenement.innerHTML = objet.evenement;
-
-// let affiche_panneau_gauche = document.querySelectorAll('div.panneau_gauche p');
-
-// affiche_panneau_gauche.forEach(element => {
-//   element.style.color = 'red';
-//   element.style.marginTop = '0px';
-//   element.style.marginBottom = '0px';
-// });
-
-// affiche_panneau_gauche.style.color = 'red';
-
-// const array = [affiche_parasha, affiche_adlaka, affiche_daf, affiche_evenement]
-
-// objet.forEach(element => {
-//   console.log(element);
-// });
-
-// for (const key in objet) {
-//   if (Object.hasOwnProperty.call(objet, key)) {
-//     const element = objet[key];
-//     console.log(element);
-//     console.log(key);
-//     array.forEach(e => {
-//       affiche${e}.innerHTML = 
-//     });
-    
-//   }
-// }
-
-
-
-
+// AFFICHAGE IMAGE
 
 const retournImage = async () => {
     fetch("http://localhost:3000/api/zmanim/pdf")
@@ -211,7 +141,13 @@ const retournImage = async () => {
   retournImage()
   
   
-  
+ // DATE en francais
+ 
+ 
+const date = new Date().toLocaleDateString();
+
+let afficheDate = document.querySelector('.date');
+
   
   
   
