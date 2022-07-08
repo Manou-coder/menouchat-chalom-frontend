@@ -1,6 +1,6 @@
 body
 {
-	background-image: url('ebauche\ bet\ hamidrash9.jpg');
+	background-image: url('ebauche\ bet\ hamidrash11.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin: 0;
@@ -9,17 +9,31 @@ body
 
 /* CHEARIM */
 
-div.zmanei_chabat{
+div.zmanei{
+	color: black;
+	font-size: larger;
+	text-shadow:
+	 0.25px 0.1px 0 #ffffcc,
+	 0.5px 0.2px 0 #ffffcc,
+	 0.75px 0.3px 0 #ffffcc,
+	 0.75px 0.4px 0 #ffffcc,
+	 1px 0.5px 0 #ffffcc;
+}
+
+div.shabat{
 	position: absolute;
 	border: 3px solid red;
 	width: 215px;
 	height: 260px;
 	top: 260px;
 	left: 60px;
-
 }
 
-div.zmanei_ayom{
+/* div.shabat article.item{
+	display: none;
+} */
+
+div.ayom{
 	position: absolute;
 	border: 3px solid red;
 	width: 215px;
@@ -58,6 +72,22 @@ p.horaire
 	width: 46.55%;
 }
 
+/* Possibilite de bouger les elements des panneaux */
+
+#Sunrise 
+{
+	position: relative;
+	right: 20px;
+	color: red;
+}
+
+#dateFr
+{
+	position: relative;
+	right: 20px;
+	color: red;
+}
+
 /* PANNEAUX A COTE DE LA MONTRE */
 
 div.gauche
@@ -72,8 +102,14 @@ div.gauche
 
 div.panneau p
 {
-	font-size: large;
-	color: white;
+	color: #ffffcc;
+	font-size: larger;
+	text-shadow:
+	 0.25px 0.1px 0 black,
+	 0.5px 0.2px 0 black,
+	 0.75px 0.3px 0 black,
+	 0.75px 0.4px 0 black,
+	 1px 0.5px 0 black;
 }
 
 p.date
@@ -89,6 +125,13 @@ div.droit
 	height: 260px;
 	top: 600px;
 	right: 20px;
+}
+
+div.droit article.item
+{
+	position: relative;
+	font-size:large;
+	margin-top: 0px;
 }
 
 div.droit p.zman {
@@ -137,33 +180,6 @@ div.droit p.horaire
 	left: 350px;	
 }
 
-/* top 870
-left 420 */
-
-/* top -210
-left -107 */
-
-/* top -152
-left -70 */
-
-#ParashatAshavua
-{
-	color: red;
-	text-decoration: none;
-}
-
-/*  */
-
-p {
-	color: #ffffcc;
-	font-size: larger;
-	text-shadow:
-	 0.25px 0.1px 0 black,
-	 0.5px 0.2px 0 black,
-	 0.75px 0.3px 0 black,
-	 0.75px 0.4px 0 black,
-	 1px 0.5px 0 black;
-}
 
 /* IMAGE */
 #myImg

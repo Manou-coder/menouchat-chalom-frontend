@@ -1,5 +1,4 @@
 // MONTRE
-clock();
 
 function clock() {
   const date = new Date();
@@ -22,7 +21,9 @@ function clock() {
   document.querySelector('.hor').style.transform = `rotate(${hor}deg)`;
 }
 
-setInterval(clock, 1000);
+setInterval(() => {
+  clock()
+}, 1000);
 //
 
 // donne heure et minutes sans les secondes
@@ -45,7 +46,11 @@ const displayTefChol = (async () => {
 
 });
 
-displayTefChol();
+
+setInterval(() => {
+  displayTefChol()
+}, 1000);
+
 
 
 // ZMANEI AYOM
@@ -74,18 +79,22 @@ const displayZmaneiAyom = (async () => {
   hadlaka.innerHTML = modifierHeure(ZmaneiShabat.hadlaka);
   let Tzais72 = document.querySelector('#Tzais72')
   Tzais72.innerHTML = modifierHeure(ZmaneiShabat.Tzais72);
-  let TzaisShabat = document.querySelector('#TzaisShabat')
-  TzaisShabat.innerHTML = modifierHeure(ZmaneiShabat.Tzais);
+  let TzaisShabat = document.querySelector('#TzaisShabat');
+  // ajout d'une minute
+  ZmaneiShabat.Tzais = new Date(ZmaneiShabat.Tzais).getTime() + 60000;
+  TzaisShabat.innerHTML = new Date(ZmaneiShabat.Tzais).toLocaleTimeString().substring(0, 5);
 });
 
-displayZmaneiAyom();
+setInterval(() => {
+  displayZmaneiAyom();
+}, 1000);
 
 // ZMANEI SHABAT minchaShbt
 
 const displayZmaneiShabat= async () => {
   let ZmaneiShabat= await fetch('http://localhost:3000/api/zmanim/zman-shabat');
   ZmaneiShabat= await ZmaneiShabat.json();
-  console.log(ZmaneiShabat);
+  // console.log(ZmaneiShabat);
   let shirAshirim = document.querySelector('#shirAshirim')
   shirAshirim.innerHTML = ZmaneiShabat.shirAshirim;
   let minchaErevShbt = document.querySelector('#minchaErevShbt')
@@ -97,7 +106,11 @@ const displayZmaneiShabat= async () => {
 
 };
 
-displayZmaneiShabat();
+
+setInterval(() => {
+  displayZmaneiShabat();
+}, 1000);
+
 
 
 
@@ -107,11 +120,10 @@ displayZmaneiShabat();
 const displayInfo = (async () => {
   let info = await fetch('http://localhost:3000/api/zmanim/info');
   info = await info.json();
-  console.log(info);
-  console.log(info.eventsByDate.ParashatAshavua);
-  
+  // console.log(info);
+  // console.log(info.eventsByDate.ParashatAshavua);
   let ParashatAshavua = document.querySelector('#ParashatAshavua')
-  ParashatAshavua.innerHTML = info.eventsByDate.ParashatAshavua;
+  ParashatAshavua.innerHTML = `פרשת ${info.eventsByDate.ParashatAshavua}`;
   let daf = document.querySelector('#daf')
   daf.innerHTML = info.eventsByDate.DafYomiEvent.render;
   let dateH = document.querySelector('#dateH')
@@ -120,7 +132,11 @@ const displayInfo = (async () => {
 
 });
 
-displayInfo();
+setInterval(() => {
+  displayInfo();
+}, 1000);
+
+
 
 
 
@@ -130,23 +146,30 @@ const retournImage = async () => {
     fetch("http://localhost:3000/api/zmanim/pdf")
   .then(res => res.json())
   .then(data => {
-    console.log(data)
-    console.log("coucou");
+    // console.log(data)
+    // console.log("coucou");
     document.getElementById("myImg").src = `http://localhost:3000/${data.urlImage}`;
   });
   }
   
   
-  
-  retournImage()
+  setInterval(() => {
+    retournImage()
+  }, 1000);
+
   
   
  // DATE en francais
  
  
-const date = new Date().toLocaleDateString();
-
-let afficheDate = document.querySelector('.date');
+let date = new Date().toLocaleDateString();
+date = date.split('/')
+let date2 = date[2].split('').slice(-2).join('');
+date[2] = date2;
+date = date.join('/')
+console.log(date);
+let afficheDate = document.querySelector('#dateFr');
+afficheDate.innerHTML = date;
 
   
   
