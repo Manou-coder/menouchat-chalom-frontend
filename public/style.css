@@ -193,6 +193,35 @@ div.droit p.horaire
 
 
 /* IMAGE */
+/* #myImg {
+	-webkit-animation-name: fadeInOpacity;
+	        animation-name: fadeInOpacity;
+	-webkit-animation-iteration-count: 1;
+	        animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in;
+	        animation-timing-function: ease-in;
+	-webkit-animation-duration: 2s;
+	        animation-duration: 2s;
+}
+
+@-webkit-keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+} */
+/* 
 #myImg
 {
 	position: absolute;
@@ -201,6 +230,48 @@ div.droit p.horaire
 	max-width: 100%;
 	height:410px;
 	box-shadow: 3px 3px 3px 3px black;
+	transition: opacity 2s;
+	-webkit-transition: opacity 2s;
+}
+ */
+ @keyframes fondu {
+	0%   {opacity: 0}
+	100% {opacity: 1;}
+  }
+
+
+/* .myImg
+{
+	position: absolute;
+	bottom: 105px;
+	left: 105px;
+	max-width: 100%;
+	height:410px;
+	box-shadow: 3px 3px 3px 3px black;
+} */
+
+.myImg
+{
+	position: absolute;
+	bottom: 105px;
+	left: 105px;
+	max-width: 100%;
+	height:410px;
+	box-shadow: 3px 3px 3px 3px black;
+	animation-name: fondu ;
+	animation-duration: 6S;
+}
+
+.changing
+{
+	animation-name: fondu ;
+	animation-duration: 4s;
+}
+
+.changing2
+{
+	animation-name: fondu ;
+	animation-duration: 4s;
 }
 
 #shalom
