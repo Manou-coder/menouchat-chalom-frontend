@@ -1,6 +1,19 @@
+@font-face {
+	font-family: "Guttman Mantova";
+	src: url("./fonts/MANTM.TTF") format("truetype");
+   }
+
+@font-face {
+	font-family: "Guttman Mantova Decor";
+	src: url("./fonts/MANTDEC.TTF") format("truetype");
+   }
+
+
+
+
 body
 {
-	background-image: url('ebauche\ bet\ hamidrash11.jpg');
+	background-image: url('ebauche\ bet\ hamidrash15.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin: 0;
@@ -10,6 +23,8 @@ body
 /* CHEARIM */
 
 div.zmanei{
+	font-family: 'Guttman Mantova';
+	font-weight: bold;
 	color: black;
 	font-size: larger;
 	text-shadow:
@@ -22,24 +37,64 @@ div.zmanei{
 
 div.shabat{
 	position: absolute;
-	border: 3px solid red;
-	width: 215px;
-	height: 260px;
-	top: 260px;
-	left: 60px;
+	width: 210px;
+	height: 200px;
+	top: 325px;
+	left: 70px;
 }
 
-/* div.shabat article.item{
-	display: none;
+/* div.zmanei p.horaire
+{
+	font-weight: bold;
 } */
+
+#shirAshirim
+{
+	position: relative;
+	left: 10px;
+	font-size: 0.78em;
+}
+
+.shir
+{
+	position: relative;
+	right: 10px;
+	font-size: 0.78em;
+}
+
+#TzaisShabat
+{
+	position: relative;
+	left: 23px;
+}
+
+.arv
+{
+	position: relative;
+	right: 15px;
+}
+
+div.shabat article.item{
+	margin-top: -53px;
+	font-size: 1.5em;
+}
+
+div.shabat p.horaire{
+	width: 25%;
+	border: none;
+}
+
+div.shabat p.zman{
+	width: 70%;
+	border: none;
+}
 
 div.ayom{
 	position: absolute;
-	border: 3px solid red;
-	width: 215px;
-	height: 260px;
-	top: 260px;
-	right: 60px;
+	width: 190px;
+	height: 200px;
+	top: 330px;
+	right: 75px;
 }
 
 article.item
@@ -58,7 +113,7 @@ article.item p
 }
 
 p.zman {
-	font-weight: bold;
+	/* font-weight: bold; */
 	margin: auto;
 	text-align: right;
     border: 1px solid red;
@@ -72,32 +127,129 @@ p.horaire
 	width: 46.55%;
 }
 
+div.ayom article.item
+{
+	margin-top: -50px;
+	font-size: xx-large;
+}
+
+div.ayom article.item p
+{
+border: none;
+}
+
+
 /* Possibilite de bouger les elements des panneaux */
 
-#Sunrise 
-{
-	position: relative;
-	right: 20px;
-	color: red;
-}
 
 #dateFr
 {
 	position: relative;
+	right: 50px;
+}
+
+#AlosHashachar
+{
+	position: relative;
+	right: 25px;
+}
+
+#Sunrise 
+{
+	position: relative;
+	right: 10px;
+}
+
+#Chatzos
+{
+	position: relative;
+	right: 5px;
+}
+
+#Sunset
+{
+	position: relative;
 	right: 20px;
-	color: red;
+}
+
+#Tzais
+{
+	position: relative;
+	right: 45px;
 }
 
 /* PANNEAUX A COTE DE LA MONTRE */
 
+div.panneau p.horaire
+{
+	font-family: 'Guttman Mantova';
+}
+
+div.panneau p.zman
+{
+	font-family: 'Guttman Mantova Decor';
+	/* font-size: 0.8em; */
+}
+
+
 div.gauche
 {
 	position: absolute;
-	border: 3px solid yellow;
 	width: 230px;
 	height: 260px;
-	top: 600px;
-	left: 20px;
+	top: 590px;
+	left: 25px;
+}
+
+div.gauche article.item
+{
+	position: relative;
+	margin-top: -27px;
+}
+
+div.gauche p.zman
+{
+	/* font-weight: bold; */
+	margin: auto;
+	text-align: right;
+	width: 50%;
+	border: none;
+}
+
+div.gauche p.horaire 
+{
+    text-align: left;
+	width: 39.55%;
+	border: none;
+}
+
+
+/*  */
+.daf
+{
+	position: relative;
+	left: 23px;
+}
+
+.parashat
+{
+	position: relative;
+	right: 12px;
+
+}
+
+.adlaka
+{
+	position: absolute;
+	top: 20px;
+	right: 52px;
+}
+
+.tzais72
+{
+	position: absolute;
+	top: 20px;
+	right: 55px;
 }
 
 div.panneau p
@@ -120,33 +272,35 @@ p.date
 div.droit
 {
 	position: absolute;
-	border: 3px solid yellow;
-	width: 230px;
+	width: 190px;
 	height: 260px;
 	top: 600px;
-	right: 20px;
+	right: 18px;
 }
 
 div.droit article.item
 {
 	position: relative;
 	font-size:large;
-	margin-top: 0px;
+	margin-top: -37px;
 }
 
 div.droit p.zman {
-	font-weight: bold;
+	/* font-weight: bold; */
 	margin: auto;
 	text-align: right;
-    border: 1px solid red;
-	width: 70%;
+	width: 75%;
 }
 
 div.droit p.horaire 
 {
     text-align: left;
-    border: 1px solid green;
-	width: 26.55%;
+	width: 22.55%;
+}
+
+div.droit p
+{
+	border: none;
 }
 
 /* MONTRE */
@@ -185,9 +339,9 @@ div.droit p.horaire
 #myImg
 {
 	position: absolute;
-	bottom: 105px;
-	left: 105px;
+	bottom: 66px;
+	left: 63px;
 	max-width: 100%;
-	height:410px;
-	box-shadow: 3px 3px 3px 3px black;
+	height: 280px;
+	/* box-shadow: 3px 3px 3px 3px black; */
 }

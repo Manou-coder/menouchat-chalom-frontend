@@ -58,9 +58,9 @@ setInterval(() => {
 const displayZmaneiAyom = (async () => {
   let ZmaneiAyom = await fetch('http://localhost:3000/api/zmanim/jerusalem');
   ZmaneiAyom = await ZmaneiAyom.json();
-  // console.log(ZmaneiAyom.zmanJerusalem);
-  ZmaneiShabat = ZmaneiAyom.zmanJerusalem.HadlakAndTzais;
-  ZmaneiAyom = ZmaneiAyom.zmanJerusalem.BasicZmanim;
+  // console.log(ZmaneiAyom.BasicZmanim);
+  ZmaneiShabat = ZmaneiAyom.HadlakAndTzais;
+  ZmaneiAyom = ZmaneiAyom.BasicZmanim;
   let AlosHashachar = document.querySelector('#AlosHashachar')
   AlosHashachar.innerHTML = modifierHeure(ZmaneiAyom.AlosHashachar);
   let Sunrise = document.querySelector('#Sunrise')
@@ -88,6 +88,7 @@ const displayZmaneiAyom = (async () => {
 setInterval(() => {
   displayZmaneiAyom();
 }, 1000);
+
 
 // ZMANEI SHABAT minchaShbt
 
@@ -123,11 +124,11 @@ const displayInfo = (async () => {
   // console.log(info);
   // console.log(info.eventsByDate.ParashatAshavua);
   let ParashatAshavua = document.querySelector('#ParashatAshavua')
-  ParashatAshavua.innerHTML = `פרשת ${info.eventsByDate.ParashatAshavua}`;
+  ParashatAshavua.innerHTML = `${info.ParashatAshavua}`;
   let daf = document.querySelector('#daf')
-  daf.innerHTML = info.eventsByDate.DafYomiEvent.render;
+  daf.innerHTML = info.DafYomiEvent.render;
   let dateH = document.querySelector('#dateH')
-  dateH.innerHTML = info.eventsByDate.HebrewDateEvent.render;
+  dateH.innerHTML = info.HebrewDateEvent.render;
   
 
 });
@@ -160,20 +161,18 @@ const retournImage = async () => {
   
   
  // DATE en francais
- 
- 
-let date = new Date().toLocaleDateString();
+
+setInterval(() => {
+  let date = new Date().toLocaleDateString();
 date = date.split('/')
 let date2 = date[2].split('').slice(-2).join('');
 date[2] = date2;
 date = date.join('/')
-console.log(date);
+// console.log(date);
 let afficheDate = document.querySelector('#dateFr');
 afficheDate.innerHTML = date;
+}, 1000);
 
-  
-  
-  
-      
-  
+
+
   
